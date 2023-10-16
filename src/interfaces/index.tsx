@@ -12,13 +12,21 @@ export interface ILocation {
 }
 
 export interface IQuotingForm {
-  fullName: string;
-  address: string;
-  email: string;
-  phoneNumber: string;
-  registration: string;
-  service: string;
-  comments: string;
+  fullName?: string;
+  address?: string;
+  email?: string;
+  phoneNumber?: string;
+  registration?: string;
+  service?: string;
+  comments?: string;
+}
+
+export interface IContactForm {
+  userFirstName?: string;
+  userLastName?: string;
+  userEmail?: string;
+  userPhoneNo?: string;
+  message?: string
 }
 
 export interface IAboutUsContent {

@@ -136,6 +136,103 @@
     float: right;
 }
 
+.location {
+  display: inline-block;
+  text-align: center;
+  z-index: 1;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.label-container {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 5px;
+  color: #333;
+  position: absolute;
+  top: -90px;
+  left: -69px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 160px;
+  height: auto;
+  padding: 12px;
+  box-shadow: 0 2px 7px 1px rgba(0,0,0,.3);
+  z-index: 1000;
+  transition: .3s all;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  -ms-transition: .3s all;
+  -o-transition: .3s all;
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.activeLabel {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+}
+
+.label-container a {
+  font-size: 14px;
+  color: #333;
+  padding: .5rem 0;
+  transition: .3s all;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  -ms-transition: .3s all;
+  -o-transition: .3s all;
+}
+.label-container a:hover {
+  color: var(--primary-color);
+}
+
+.tri-down {
+  height: 12px;
+  left: 50%;
+  position: absolute;
+  bottom: -12px;
+  width: 25px;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+}
+
+.tri-down::after {
+  background: #fff;
+  clip-path: polygon(0 0,50% 100%,100% 0);
+  content: "";
+  height: 12px;
+  left: 0;
+  position: absolute;
+  top: -1px;
+  width: 25px;
+}
+
+.contact-error::placeholder {
+  color: var(--primary-color)
+}
+
 #submit-button {
     float: right;
     width: 20%;

@@ -7,6 +7,8 @@ import swal from "sweetalert"; // For custom alerts
 
 // Components
 import sendContactUsEmail from "./sendContactUsMail"; // SendMail function
+import { useFormik } from "formik";
+import { validateContactForm } from "@utils/utils";
 
 /**
  * @name ContactForm
@@ -15,16 +17,20 @@ import sendContactUsEmail from "./sendContactUsMail"; // SendMail function
  */
 
 export default function ContactForm() {
-  // Set the first name
-  const [userFirstName, setFirstName] = useState("");
-  // Set the last name
-  const [userLastName, setLastName] = useState("");
-  // Set the email
-  const [userEmail, setEmail] = useState("");
-  // Set the phone number
-  const [userPhoneNo, setPhoneNo] = useState("");
-  // Set the message
-  const [message, setMessage] = useState("");
+
+  const initialValues = {
+    userFirstName: '',
+    userLastName: '',
+    userEmail: '',
+    userPhoneNo: '',
+    message: ''
+  }
+
+  const formik = useFormik({
+    initialValues,
+    validate: validateContactForm,
+    onSubmit: () => console.log('submit')
+  })
 
   // Handler functions
   const handlePhoneNumberChange = (e: any) => {
@@ -32,32 +38,42 @@ export default function ContactForm() {
     const phoneNumberValue = inputPhoneNumber
       .replace(/\D/g, "") // Remove non-numeric characters
       .substring(0, 10); // Limit to 10 digits
-    setPhoneNo(phoneNumberValue);
+    formik.setFieldValue('userPhoneNo',phoneNumberValue);
   };
 
   // Submit form
   const submitForm = () => {
-    if (
-      sendContactUsEmail({
-        userFirstName,
-        userLastName,
-        userEmail,
-        userPhoneNo,
-        message,
-      })
-    ) {
+    const body = formik.values;
+    // viết sai bất đồng bộ, luôn trả về true
+    const isSuccessRes = sendContactUsEmail(body);
+    if (isSuccessRes) {
       swal({
         title: "Form Sent",
         icon: "success",
       });
-    } else {
-      swal({
-        title: "Error",
-        text: "An error has occured while sending your message!",
-        icon: "error",
-      });
+      return;
     }
+    swal({
+      title: "Error",
+      text: "An error has occured while sending your message!",
+      icon: "error",
+    });
   };
+
+  const userFirstNameErr = formik.touched.userFirstName && formik.errors.userFirstName;
+  const userLastNameErr = formik.touched.userLastName && formik.errors.userLastName;
+  const userEmailErr = formik.touched.userEmail && formik.errors.userEmail;
+  const userPhoneNoErr = formik.touched.userPhoneNo && formik.errors.userPhoneNo;
+  const messageErr = formik.touched.message && formik.errors.message;
+  
+  const isEmptyForm = () => {
+    return !formik.values.userFirstName && 
+    !formik.values.userLastName && 
+    !formik.values.userEmail &&
+    !formik.values.userPhoneNo && 
+    !formik.values.message;
+  }
+  console.log(formik.errors);
 
   return (
     <section className="contact-us-form">
@@ -67,24 +83,27 @@ export default function ContactForm() {
           {/* <!-- Form Group 1: Full Name --> */}
           <div className="form-group">
             <input
-              id="form__firstName"
+              id="userFirstName"
+              name="userFirstName"
               type="text"
-              placeholder="First Name"
-              className="clear-border-right"
-              value={userFirstName}
-              required
-              onChange={(e) => setFirstName(e.target.value)}
+              placeholder={userFirstNameErr ? formik.errors.userFirstName : `First Name`}
+              className={`clear-border-right ${userFirstNameErr ? 'contact-error' : ''}`}
+              value={formik.values.userFirstName}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
           </div>
           {/* <!-- Form Group 2: Last Name --> */}
           <div className="form-group">
             <input
-              id="form__lastName"
+              id="userLastName"
+              name="userLastName"
               type="text"
-              placeholder="Last Name"
-              value={userLastName}
-              required
-              onChange={(e) => setLastName(e.target.value)}
+              className={`${userLastNameErr ? 'contact-error' : ''}`}
+              placeholder={userLastNameErr ? formik.errors.userLastName : `Last Name`}
+              value={formik.values.userLastName}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
           </div>
         </div>
@@ -92,36 +111,43 @@ export default function ContactForm() {
           {/* <!-- Form Group 3: Email --> */}
           <div className="form-group">
             <input
-              id="form__email"
+              id="userEmail"
+              name="userEmail"
               type="email"
-              placeholder="Email"
-              className="clear-border-right"
-              value={userEmail}
-              required
-              onChange={(e) => setEmail(e.target.value)}
+              placeholder={userEmailErr ? formik.errors.userEmail : `Email`}
+              className={`clear-border-right ${userEmailErr ? 'contact-error' : ''}`}
+              value={formik.values.userEmail}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
             />
           </div>
           {/* <!-- Form Group 4: Phone Number --> */}
           <div className="form-group">
             <input
-              id="form__phoneNo"
+              id="userPhoneNo"
+              name="userPhoneNo"
               type="tel"
-              placeholder="Phone"
+              className={`${userPhoneNoErr ? 'contact-error' : ''}`}
+              placeholder={userPhoneNoErr ? formik.errors.userPhoneNo : `Phone Number`}
               pattern="0[0-9]{3}[0-9]{3}[0-9]{3}"
-              value={userPhoneNo}
+              value={formik.values.userPhoneNo}
               onChange={handlePhoneNumberChange}
+              onBlur={formik.handleBlur}
             />
           </div>
         </div>
         {/* <!-- Form Group 5: Comments --> */}
         <div className="form-group">
           <input
-            id="form__message"
+            id="message"
+            name="message"
             type="text"
-            placeholder="Type your message here..."
-            value={message}
+            className={`${messageErr ? 'contact-error' : ''}`}
+            placeholder={messageErr ? formik.errors.message : `Type your message here...`}
+            value={formik.values.message}
             style={{ height: "126px" }}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
         </div>
         {/* <!-- Submit button --> */}
@@ -129,6 +155,7 @@ export default function ContactForm() {
           <Button
             type="button"
             buttonName="Submit"
+            extendsClass={`${isEmptyForm() || Object.values(formik.errors).length ? 'disabled' : ''}`}
             size="small"
             rounded="half"
             onClick={() => submitForm()}
