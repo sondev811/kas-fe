@@ -1,0 +1,148 @@
+/* This file contains the styling for the Header and the Nav Bar of the application */
+
+.header {
+  background: var(--header-bg-color);
+}
+
+.header.header--fixed {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background: rgb(235, 235, 235);
+}
+
+.header___inner {
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__top {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: var(--btn-bg-color);
+  padding: 0 16px;
+  transition: .3s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .3s all;
+  -ms-transition: .3s all;
+  -o-transition: .3s all;
+}
+
+.hide-header-top {
+  height: 0;
+  opacity: 0;
+}
+
+.header__top p {
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.header__top span {
+  padding: 0 1rem;
+}
+
+.logo-inner {
+  position: absolute;
+  left: 50px;
+  top: 0;
+  z-index: 1;
+  height: 75px; /* bằng chiều cao của header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hideLogo img {
+  display: none;
+}
+
+.logo-inner img{
+  transition: .5s all;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+  -ms-transition: .5s all;
+  -o-transition: .5s all;
+}
+
+.activeScroll img {
+  width: 150px;
+  transform: translate(0px, 0px)!important;
+  -webkit-transform: translate(0px, 0px)!important;
+  -moz-transform: translate(0px, 0px)!important;
+  -ms-transform: translate(0px, 0px)!important;
+  -o-transform: translate(0px, 0px)!important;
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+}
+
+#phone-header, #mail-header {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* For tablet or less than */
+@media screen and (max-width: 991.98px) {
+  .kashy-partner__img {
+    display: none;
+  }
+  .logo-inner {
+    display: none;
+  }
+  
+  .header__logo {
+    flex: 1;
+  }
+
+  .navbar {
+    padding-right: 1rem;
+  }
+}
+
+/* For mobile */
+@media screen and (max-width: 575.98px) {
+  .logo {
+    margin-right: auto;
+  }
+
+  .header__top {
+    display: none;
+  }
+
+  .nav-mobile-btn {
+    display: block;
+  }
+}
+
+/* .navbar__list {
+    display: flex;
+    list-style-type: none;
+}
+  
+.header-action__link,
+.navbar__link {
+    margin: 0 auto;
+    padding: 8px 16px;
+    font-weight: 300;
+    font-size: 2rem;
+}
+  
+.navbar__link:hover {
+    color: #e89c89;
+} */
+
+/* .header-action__btn {
+    --height: 50px;
+  
+    min-width: 120px;
+} */

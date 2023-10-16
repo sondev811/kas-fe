@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.20cdd072.css",
+    "main.js": "/static/js/main.002d347b.js",
+    "static/media/hero.png": "/static/media/hero.b626b2dd854f774ad317.png",
+    "static/media/thumb-4.jpeg": "/static/media/thumb-4.c08a833a2e546c6d164e.jpeg",
+    "static/media/logo-icon.svg": "/static/media/logo-icon.3826abb61736cd195dbb8d408230773c.svg",
+    "static/media/logo-icon-large.png": "/static/media/logo-icon-large.8294b6a9f020d766f75f.png",
+    "static/media/advertisement-twice.webp": "/static/media/advertisement-twice.d73da8e6ba22ffb2c3d7.webp",
+    "static/media/thumb-2.jpeg": "/static/media/thumb-2.d9eefa05764458448d46.jpeg",
+    "static/media/thumb-5.jpeg": "/static/media/thumb-5.2d95415b40a2f4aa931f.jpeg",
+    "static/media/thumb-3.jpeg": "/static/media/thumb-3.b0fbe62b9dce3eb15fe0.jpeg",
+    "static/media/thumb-1.jpeg": "/static/media/thumb-1.8ac9d5fc982ce9e18b6a.jpeg",
+    "static/media/advertisement-MTAQ.webp": "/static/media/advertisement-MTAQ.a869ad2e617fafadf545.webp",
+    "static/media/advertisement-heymel.webp": "/static/media/advertisement-heymel.8add6f69d2f0de09db95.webp",
+    "static/media/MTAQ-Transparent-Logo.webp": "/static/media/MTAQ-Transparent-Logo.00e827b61d55f0491801.webp",
+    "static/media/advertisement-practal.webp": "/static/media/advertisement-practal.0def6419cdec5d23e452.webp",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.20cdd072.css.map": "/static/css/main.20cdd072.css.map",
+    "main.002d347b.js.map": "/static/js/main.002d347b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20cdd072.css",
+    "static/js/main.002d347b.js"
+  ]
+}

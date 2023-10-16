@@ -1,0 +1,41 @@
+/* This file contains the styling for the svg file */
+
+.error404-contents {
+    margin: 170px 100px 50px 100px;
+}
+
+#error404-icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    filter: grayscale(100%);
+    width: 500px;
+    max-width: 100%;
+}
+
+.error404-message {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#whoops {
+    font-size: 35px;
+}
+
+#error-cta {
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+#go-back-home {
+    display: block;
+    margin: 40px auto auto;
+    border-radius: 20px;
+    border-color: #000000;
+    font-weight: bold;
+    background: none;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    cursor: pointer;
+}

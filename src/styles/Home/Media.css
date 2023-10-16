@@ -1,0 +1,124 @@
+/* This file contains the styling for the Media section of the home page */
+
+.media {
+  padding: 80px 0;
+}
+
+.media-inner {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  column-gap: 16px;
+}
+
+.media-photo {
+  text-align: center;
+  height: 100%;
+}
+
+.media-photo__heading {
+  font-weight: 200;
+}
+
+.media-photo__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0;
+  border-radius: 0;
+  background-color: var(--secondary-color);
+  font-weight: 300;
+}
+
+.media-photo__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+.media-photo__icon,
+.media-photo__text-btn {
+  color: var(--text-color);
+}
+
+.media-photo__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 20px;
+  column-gap: 20px;
+  margin-top: 24px;
+}
+
+.media-photo__list--mobile {
+  display: none;
+}
+
+.media-photo-item__thumb {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.media-photo-item__thumb1 {
+  /* display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5%;
+  object-fit: cover; */
+  width: 100px;
+  height: 100px;
+}
+
+
+/* For tablet or less than */
+@media screen and (max-width: 991.98px) {
+  .media-inner {
+    display: block;
+  }
+
+  .media-photo__list {
+    display: none;
+  }
+
+  .media-photo-item {
+    padding: 0 5px;
+  }
+
+  .media-photo__list--mobile {
+    display: block;
+  }
+
+  .media-photo__social {
+    padding: 2rem 0;
+  }
+
+  .media-photo__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .media-inner__video iframe {
+    height: 400px;
+  }
+}
+
+/* For mobile */
+@media screen and (max-width: 575.98px) {
+  .media-inner__video iframe {
+    height: 300px;
+  }
+
+  .media-photo__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* .media-photo-item__thumb {
+    width: 150px;
+    height: 150px;
+  } */
+}

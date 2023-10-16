@@ -1,0 +1,92 @@
+.subscribe-partner__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribe {
+  padding: 24px 40px 24px;
+  width: 80%;
+}
+
+.subscribe-inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.subscribe-form__label {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.subscribe-form__text-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subscribe-form__input {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #e3e3e9;
+  background: transparent;
+  padding: 8px 0 14px 0;
+  color: var(--text-color);
+}
+
+.subscribe-form__btn {
+  margin-left: 24px;
+}
+
+.subscribe-form__btn-cta {
+  --height: 40px;
+
+  min-width: 100px;
+  font-size: 1.5rem;
+  box-shadow: 0px 13px 26px -8px rgba(212, 69, 45, 0.8);
+  border-radius: 10px;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.coop-partner {
+  padding: 24px 40px 24px;
+  text-align: center;
+}
+
+.coop-partner__heading {
+  font-size: 3rem;
+  margin-bottom: 24px;
+}
+
+.coop-partner__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: space-evenly;
+  row-gap: 32px;
+}
+
+/* For tablet or less than */
+@media screen and (max-width: 991.98px) {
+  .subscribe-partner__content {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+
+  .subscribe-inner  {
+    display: inline-flex;
+    width: 85vw;
+  }
+}
+
+/* For mobile */
+@media screen and (max-width: 575.98px) { 
+  .coop-partner__list {
+    grid-template-columns: 1fr;
+  }
+}

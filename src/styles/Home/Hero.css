@@ -1,0 +1,265 @@
+/* This file contains the styling for the Hero section of the home page */
+
+/* 40px gap btw 2 blocks: hero__inner and header 
+ 
+so header bottom takes 16px + 24 for hero__inner
+*/
+.hero {
+  background: var(--hero-bg-color);
+  /* margin-top: 67px; */
+}
+
+.hero__inner {
+  padding: 12.5rem 2rem;
+  background: rgb(235, 235, 235);
+  padding-bottom: 3rem;
+  /* height: 100vh; */
+}
+
+.hero__inner>div{
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0;
+  border: 15px #E5E5E5 solid;
+  background: #fff;
+  padding: 2rem;
+  
+}
+
+/* Left Side: Hero Article / About Kashy */
+.hero-introduction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero_inner--mobile {
+  display: none;
+}
+
+.hero_inner--mobile div {
+  margin-top: 30px;
+}
+
+.hero_inner--mobile img {
+  width: 400px;
+}
+
+.hero-introduction__heading {
+  margin-top: 24px;
+  font-size: 2.3rem;
+  width: 345px;
+  max-width: 100%;
+  height: 90px;
+}
+
+.hero-introduction__des {
+  font-size: 2rem;
+  width: 500px;
+  max-width: 100%;
+}
+
+.hero-introduction__logo {
+  height: 125px;
+}
+
+.hero-introduction__desc--mobile{
+  display: none;
+}
+
+.hero-benefits {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 16px;
+}
+
+.hero-item__title {
+  position: relative;
+}
+
+.hero-item__title::after {
+  position: absolute;
+  content: "";
+  width: 44px;
+  height: 3px;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text-color);
+}
+
+.hero-item__desc {
+  font-weight: 200;
+  line-height: 160%;
+}
+
+.hero-action {
+  margin-top: 24px;
+}
+
+.hero-action__btn {
+  font-size: 1.4rem;
+  background: var(--secondary-color);
+  box-shadow: 0px 13px 26px -8px var(--btn-shadow-color);
+  color: var(--text-color);
+  border: none;
+}
+
+.hero__socials {
+  display: flex;
+  column-gap: 32px;
+  margin-top: 24px;
+}
+
+.hero__socials-btn:last-child {
+  margin-right: 0;
+}
+
+.hero-socials {
+  display: flex;
+  column-gap: 32px;
+  margin-top: 40px;
+}
+
+.hero-socials__link:last-child {
+  margin-right: 0;
+}
+
+.hero-socials__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--text-color);
+  transition: .3s all;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  -ms-transition: .3s all;
+  -o-transition: .3s all;
+}
+
+.facebook:hover svg{
+  color: #4267B2;
+}
+
+.instagram:hover svg {
+  color: #833AB4;
+}
+
+.linkedin:hover svg {
+  color: #0077b5;
+}
+
+.youtube:hover svg {
+  color: #FF0000;
+}
+
+/* For tablet or less than */
+@media screen and (max-width: 991.98px) {
+  .hero_inner--mobile {
+    display: block;
+  }
+
+  .hero-introduction__logo {
+    display: none;
+  }
+
+  .hero__inner {
+    padding: 0;
+  }
+
+  .hero__inner>div {
+    display: flex;
+    padding: 0;
+    border: none;
+    height: 100vh;
+  }
+
+  .hero_inner--mobile div {
+    margin-top: 8rem;
+  }
+  
+  .hero_inner--mobile img {
+    width: 600px;
+  }
+
+  .hero-introduction__heading {
+    padding: 1rem;
+  }
+
+  .hero_inner--mobile button {
+    padding: 1rem 5rem;
+    height: auto;
+  }
+
+  .hero-introduction__desc {
+    display: none;
+  }
+
+  .hero-introduction__desc--mobile{
+    display: block;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+  .hero-introduction__desc--mobile-nmg{
+    margin: 0;
+  }
+
+  .hero-item__title {
+    display: none;
+  }
+
+  .hero-item__desc {
+    display: none;
+  }
+
+  .hero-action {
+    display: none;
+  }
+
+  .hero-socials {
+    display: none;
+  }
+}
+
+/* For mobile */
+@media screen and (max-width: 575.98px) {
+  .logo-large {
+    display: none;
+    /* width: 280px; */
+  }
+
+  .hero-introduction__heading {
+    font-size: 2rem;
+    width: 300px;
+    max-width: 100%;
+    margin: 0;
+    /* display: none; */
+  }
+
+  .hero__inner {
+    max-width: 100%;
+  }
+
+  .hero_inner--mobile div {
+    margin-top: 5rem;
+  }
+  
+  .hero_inner--mobile img {
+    width: 300px;
+  }
+
+  .hero_inner--mobile button {
+    padding: 0rem 3rem
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .hero_inner--mobile img {
+    width: 245px;
+  }
+}

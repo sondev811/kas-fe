@@ -1,0 +1,75 @@
+.button {
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transform-origin: center center;
+  background-color: var(--btn-bg-color);
+  color: var(--btn-text-light-color);
+  border: 1px solid transparent;
+  transition: .3s all;
+  -webkit-transition: .3s all;
+  -moz-transition: .3s all;
+  -ms-transition: .3s all;
+  -o-transition: .3s all;
+  box-shadow: var(--btn-shadow-color) 0px 10px 40px -10px;
+}
+
+.button:hover {
+  background-color: var(--btn-hover-color);
+}
+
+.button-large {
+  padding: var(--btn-large-size);
+  font-size: var(--btn-large-font);
+}
+
+.button-normal {
+  padding: var(--btn-normal-size);
+  font-size: var(--btn-normal-font);
+}
+
+.button-small {
+  padding: var(--btn-small-size);
+  font-size: var(--btn-small-font);
+}
+
+.button-rounded {
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.button-half-rounded {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.button-text-dark {
+  color: var(--btn-text-dark-color);
+}
+
+.button-icon {
+  padding: 0 .5rem;
+}
+
+.button svg {
+  color: var(--btn-text-light-color);
+}
+
+.button-text-dark svg {
+  color: var(--btn-text-dark-color);
+}
+
+.disabled {
+  opacity: .5;
+  pointer-events: none;
+}
